@@ -12,7 +12,7 @@ Gem::Specification.new do |spec| # rubocop:disable Metrics/BlockLength
   spec.summary  = 'A batteries-included API wrapper for reddit.'
   spec.homepage = 'https://github.com/avinashbot/redd'
   spec.license  = 'MIT'
-  spec.required_ruby_version = '>= 2.1.0'
+  spec.required_ruby_version = '>= 3.0.0'
 
   spec.files = `git ls-files -z`.split("\x0").reject do |f|
     f.match(%r{^(test|spec|features)/})
@@ -21,7 +21,7 @@ Gem::Specification.new do |spec| # rubocop:disable Metrics/BlockLength
   spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
   spec.require_paths = ['lib']
 
-  spec.add_dependency 'http', '~> 2.2'
+  spec.add_dependency 'http', ['>= 2.2', '< 6.0']
   spec.add_dependency 'lazy_lazer', '~> 0.8.1'
 
   spec.add_development_dependency 'pry'
